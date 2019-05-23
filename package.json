@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/guardian/mobile-purchases#readme",
   "devDependencies": {
+    "aws-cdk": "^0.31.0",
     "jest": "^24.8.0",
     "typescript": "^3.4.5"
   },
