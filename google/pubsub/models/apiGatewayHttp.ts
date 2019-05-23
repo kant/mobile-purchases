@@ -23,3 +23,9 @@ export class HTTPResponse {
         this.body = body;
     }
 }
+
+export const HTTPResponses = {
+    OK: new HTTPResponse(200, new HTTPHeaders(), "{\"status\": 200, \"message\": \"OK\"}"),
+    UNAUTHORISED: new HTTPResponse(200, new HTTPHeaders(), "{\"status\": 401, \"message\": \"UNAUTHORISED\"}"),
+    INTERNAL_ERROR: new HTTPResponse(200, new HTTPHeaders(), "{\"status\": 500, \"message\": \"INTERNAL SERVER ERROR\"}")
+};
