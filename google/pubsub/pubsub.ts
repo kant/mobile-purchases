@@ -1,12 +1,19 @@
-import {HTTPRequest, HTTPResponse, HTTPHeaders} from "./models/apiGatewayHttp";
+import {HTTPRequest, HTTPResponse, HTTPHeaders, HTTPResponses} from "./models/apiGatewayHttp";
+import {DeveloperNotification} from "./models/developerNotification";
 
 const secret = process.env.Secret;
 
 export async function handler(request: HTTPRequest): Promise<HTTPResponse> {
+    try {
+        let notification = JSON.parse(request.body) as DeveloperNotification;
+        console.log(notification)
+    } catch (e) {
+        console.error("Unable to parse JSON", e);
+    }
     if (request.queryStringParameters.secret === secret) {
-        return new HTTPResponse(200, new HTTPHeaders(), "OK")
+        return HTTPResponses.OK
     } else {
-        return new HTTPResponse(500, new HTTPHeaders(), "Server Error")
+        return HTTPResponses.UNAUTHORISED
     }
 }
 
