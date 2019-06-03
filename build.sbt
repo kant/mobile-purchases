@@ -59,6 +59,7 @@ lazy val root = project
     riffRaffArtifactResources += (assembly in googleoauth).value -> s"${(name in googleoauth).value}/${(assembly in googleoauth).value.getName}",
     riffRaffArtifactResources += file("tsc-target/mobile-purchases-google.zip") -> s"mobile-purchases-googlepubsub/mobile-purchases-google.zip",
     riffRaffArtifactResources += file("cloudformation.yaml") -> s"mobile-purchases-cloudformation/cloudformation.yaml",
+    riffRaffArtifactResources += file("exportsubscriptions/scripts/export.hql") -> "mobile-export-subscriptions/export.yaml"
   )
 
 def commonAssemblySettings(module: String): immutable.Seq[Def.Setting[_]] = commonSettings(module) ++ List(

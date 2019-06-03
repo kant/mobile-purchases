@@ -42,3 +42,12 @@ deployments:
       functionNames: [mobile-purchases-googlepubsub-]
       fileName: mobile-purchases-google.zip
       prefixStack: false
+
+  monbile-export-subscriptions:
+    type: aws-s3
+    parameters:
+      cacheControl: max-age=60
+      publicReadAcl: false
+      prefixPackage: false
+      prefixStage: true
+      prefixStack: true
