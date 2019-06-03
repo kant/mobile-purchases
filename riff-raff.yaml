@@ -43,7 +43,7 @@ deployments:
       fileName: mobile-purchases-google.zip
       prefixStack: false
 
-  monbile-export-subscriptions:
+  mobile-export-subscriptions:
     type: aws-s3
     parameters:                              #
       bucket: mobile-dist
