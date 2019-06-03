@@ -45,7 +45,8 @@ deployments:
 
   monbile-export-subscriptions:
     type: aws-s3
-    parameters:
+    parameters:                              #
+      bucket: mobile-dist
       cacheControl: max-age=60
       publicReadAcl: false
       prefixPackage: false
