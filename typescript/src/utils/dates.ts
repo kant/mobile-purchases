@@ -11,8 +11,11 @@ export function optionalMsToFormattedString(ms?: string): string | undefined {
 }
 
 export function thirtyMonths(from: Date = new Date()): Date {
+    console.log(`from: ${from.getTime()}`);
     const newDate = new Date(from.getTime());
+    console.log(`newDate: ${newDate.getTime()}`);
     newDate.setMonth(from.getMonth() + 30);
+    console.log(`newDate+30: ${newDate.getTime()}`);
     return newDate;
 }
 
