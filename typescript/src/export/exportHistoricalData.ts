@@ -54,6 +54,8 @@ export async function handler(params: {date: string}): Promise<any> {
     let zippedStream = zlib.createGzip();
 
     const yesterday = params.date ?? plusDays(new Date(), -1).toISOString().substr(0,10);
+    console.log(`Processing data for ${yesterday}...`);
+
     const prefix = (Stage === "PROD") ? "recovered-prod-data" : "code-data";
     const randomString = Math.random().toString(36).substring(10);
     const filename = `${prefix}/date=${yesterday}/${yesterday}-${randomString}.json.gz`;
